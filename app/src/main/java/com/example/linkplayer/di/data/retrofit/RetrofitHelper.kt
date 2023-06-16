@@ -1,4 +1,4 @@
-package com.example.linkplayer.data.retrofit
+package com.example.linkplayer.di.data.retrofit
 
 import com.google.gson.GsonBuilder
 import retrofit2.Retrofit

@@ -1,4 +1,4 @@
-package com.example.linkplayer.data
+package com.example.linkplayer.di.data
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Music App</string>
+    <string name="app_name">Link player</string>
     <string name="no_network_connectivity">No Network Connectivity</string>
     <string name="channel_name">Playing notification</string>
     <string name="channel_description">Playing track</string>

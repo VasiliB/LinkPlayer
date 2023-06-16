@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "835348414800",
+    "project_id": "fartapp-572c1",
+    "storage_bucket": "fartapp-572c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835348414800:android:d031320bf6ee2d7eec6c55",
+        "android_client_info": {
+          "package_name": "com.example.fartapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835348414800-mu50836i642pgec6o9ifc42l5okcvfm4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4tpuMdfbNPqbaB4hf3hlrLJUVPAt3XCA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835348414800-mu50836i642pgec6o9ifc42l5okcvfm4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835348414800:android:09e3624bbb5ab64cec6c55",
+        "android_client_info": {
+          "package_name": "com.example.linkplayer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835348414800-mu50836i642pgec6o9ifc42l5okcvfm4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4tpuMdfbNPqbaB4hf3hlrLJUVPAt3XCA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835348414800-mu50836i642pgec6o9ifc42l5okcvfm4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

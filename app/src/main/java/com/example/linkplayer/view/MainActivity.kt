@@ -1,5 +1,6 @@
 package com.example.linkplayer.view
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -8,20 +9,25 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.linkplayer.R
+import com.example.linkplayer.databinding.ActivityMainBinding
 import com.example.musicapp.model.Track
 import com.example.linkplayer.utils.Status
 import com.example.linkplayer.view_model.TrackViewModel
-import kotlinx.android.synthetic.main.activity_main.*
-import org.koin.android.viewmodel.compat.ScopeCompat.viewModel
+//import kotlinx.android.synthetic.main.activity_main.*
+//import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class MainActivity : AppCompatActivity() {
 
     private val mainViewModel : TrackViewModel by viewModel()
     private lateinit var adapter: MainAdapter
+    private lateinit var binding: ActivityMainBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
         setupUI()
         setupObserver()
@@ -29,38 +35,39 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupUI() {
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
         adapter = MainAdapter(arrayListOf())
-        recyclerView.addItemDecoration(
+        binding.recyclerView.addItemDecoration(
             DividerItemDecoration(
-                recyclerView.context,
-                (recyclerView.layoutManager as LinearLayoutManager).orientation
+                binding.recyclerView.context,
+                (binding.recyclerView.layoutManager as LinearLayoutManager).orientation
             )
         )
-        recyclerView.adapter = adapter
+        binding.recyclerView.adapter = adapter
     }
 
     private fun setupObserver() {
         mainViewModel.tracks.observe(this, Observer {
             when (it.status) {
                 Status.SUCCESS -> {
-                    progressBar.visibility = View.GONE
+                    binding.progressBar.visibility = View.GONE
                     it.data?.let { tracks -> renderList(tracks) }
-                    recyclerView.visibility = View.VISIBLE
+                    binding.recyclerView.visibility = View.VISIBLE
                 }
                 Status.LOADING -> {
-                    progressBar.visibility = View.VISIBLE
-                    recyclerView.visibility = View.GONE
+                    binding.progressBar.visibility = View.VISIBLE
+                    binding.recyclerView.visibility = View.GONE
                 }
                 Status.ERROR -> {
                     //Handle Error
-                    progressBar.visibility = View.GONE
+                    binding.progressBar.visibility = View.GONE
                     Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
                 }
             }
         })
     }
 
+//    @SuppressLint("NotifyDataSetChanged")
     private fun renderList(tracks: List<Track>) {
         adapter.addData(tracks)
         adapter.notifyDataSetChanged()
