@@ -76,10 +76,18 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
 
     // Koin
-    implementation 'io.insert-koin:koin-androidx-viewmodel:2.1.6'
-    implementation 'io.insert-koin:koin-android:2.1.6'
-    implementation 'io.insert-koin:koin-androidx-scope:2.1.6'
-    implementation 'io.insert-koin:koin-core:3.2.0'
+//    implementation 'io.insert-koin:koin-androidx-viewmodel:2.1.6'
+//    implementation 'io.insert-koin:koin-android:2.1.6'
+//    implementation 'io.insert-koin:koin-androidx-scope:2.1.6'
+//    implementation 'io.insert-koin:koin-core:3.3.0'
+    // Koin main features for Android (Scope,ViewModel ...)
+    implementation "io.insert-koin:koin-android:$koin_version"
+// Koin Java Compatibility
+    implementation "io.insert-koin:koin-android-compat:$koin_version"
+// Koin for Jetpack WorkManager
+    implementation "io.insert-koin:koin-androidx-workmanager:$koin_version"
+// Koin for Jetpack Compose
+    implementation "io.insert-koin:koin-androidx-compose:$koin_version"
 
     // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
