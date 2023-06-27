@@ -1,4 +1,4 @@
-//package com.example.musicapp.view
+//package com.example.linkplayer.view
 //
 //import android.media.MediaPlayer
 //import android.os.Handler
@@ -6,8 +6,8 @@
 //import android.view.View
 //import android.widget.SeekBar
 //import androidx.fragment.app.Fragment
-//import com.example.musicapp.R
-//import com.example.musicapp.databinding.FragmentPlayerBinding
+//import com.example.linkplayer.databinding.FragmentPlayerBinding
+//
 //import com.example.musicapp.model.Track
 //import com.example.linkplayer.view_model.TrackViewModel
 //import kotlinx.coroutines.CoroutineScope

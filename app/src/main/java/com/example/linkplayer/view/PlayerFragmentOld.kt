@@ -23,6 +23,8 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import retrofit2.Response
 import java.io.IOException
+import androidx.navigation.fragment.findNavController
+
 
 class PlayerFragmentOld : Fragment(R.layout.fragment_player), View.OnClickListener,
     View.OnTouchListener, MediaPlayer.OnCompletionListener, MediaPlayer.OnBufferingUpdateListener {
@@ -65,6 +67,9 @@ class PlayerFragmentOld : Fragment(R.layout.fragment_player), View.OnClickListen
         binding = FragmentPlayerBinding.inflate(layoutInflater)
 //        val view = binding.root
 //        setContentView(view)
+        binding.stopBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_fragment_player_to_fragment_main_activity)
+        }
 
         scopeIO.launch {
 //            configuration = loadConfiguration()

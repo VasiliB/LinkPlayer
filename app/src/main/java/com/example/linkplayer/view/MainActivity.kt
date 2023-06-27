@@ -1,20 +1,25 @@
 package com.example.linkplayer.view
 
-import android.annotation.SuppressLint
+//import kotlinx.android.synthetic.main.activity_main.*
+//import org.koin.android.viewmodel.ext.android.viewModel
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+//import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.linkplayer.R
 import com.example.linkplayer.databinding.ActivityMainBinding
-import com.example.musicapp.model.Track
 import com.example.linkplayer.utils.Status
 import com.example.linkplayer.view_model.TrackViewModel
-//import kotlinx.android.synthetic.main.activity_main.*
-//import org.koin.android.viewmodel.ext.android.viewModel
+import com.example.musicapp.model.Track
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -23,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     private val mainViewModel : TrackViewModel by viewModel()
     private lateinit var adapter: MainAdapter
     private lateinit var binding: ActivityMainBinding
+    private lateinit var navConroller: NavController
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +38,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
         setupUI()
         setupObserver()
+
+//        navConroller = Navigation.findNavController(this, R.id.mainNavHostFragment)
+
+//        binding.root.setOnClickListener {
+//            findNavController().navigate(R.id.action_fragment_main_activity_to_fragment_player)
+//        }
     }
+
+
 
     private fun setupUI() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this)

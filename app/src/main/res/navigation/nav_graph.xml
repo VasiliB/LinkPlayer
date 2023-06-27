@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragment_main_activity">
+
+    <fragment
+        android:id="@+id/fragment_main_activity"
+        android:name="com.example.linkplayer.view.MainActivity"
+        android:label="fragment_butts_list"
+        tools:layout="@layout/activity_main">
+
+        <action
+            android:id="@+id/action_fragment_main_activity_to_fragment_player"
+            app:destination="@id/fragment_player"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/fragment_player"
+            app:popUpToInclusive="true" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_player"
+        android:name="com.example.linkplayer.view.PlayerFragmentOld"
+        android:label="fragment_fart"
+        tools:layout="@layout/fragment_player">
+
+        <action
+            android:id="@+id/action_fragment_player_to_fragment_main_activity"
+            app:destination="@id/fragment_main_activity"
+            app:launchSingleTop="true" />
+
+    </fragment>
+
+</navigation>
