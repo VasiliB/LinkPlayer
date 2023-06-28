@@ -3,16 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/fragment_main_activity">
+    app:startDestination="@id/fragment_track_list">
 
     <fragment
-        android:id="@+id/fragment_main_activity"
+        android:id="@+id/fragment_track_list"
         android:name="com.example.linkplayer.view.MainActivity"
-        android:label="fragment_butts_list"
-        tools:layout="@layout/activity_main">
+        android:label="fragment_track_list"
+        tools:layout="@layout/fragment_track_list">
 
         <action
-            android:id="@+id/action_fragment_main_activity_to_fragment_player"
+            android:id="@+id/action_fragment_track_list_to_fragment_player"
             app:destination="@id/fragment_player"
             app:launchSingleTop="true"
             app:popUpTo="@id/fragment_player"
@@ -28,8 +28,8 @@
         tools:layout="@layout/fragment_player">
 
         <action
-            android:id="@+id/action_fragment_player_to_fragment_main_activity"
-            app:destination="@id/fragment_main_activity"
+            android:id="@+id/action_fragment_player_to_fragment_track_list"
+            app:destination="@id/fragment_track_list"
             app:launchSingleTop="true" />
 
     </fragment>

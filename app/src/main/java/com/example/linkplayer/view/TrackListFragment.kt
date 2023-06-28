@@ -26,7 +26,7 @@ import java.io.IOException
 import androidx.navigation.fragment.findNavController
 
 
-class PlayerFragmentOld : Fragment(R.layout.fragment_player), View.OnClickListener,
+class TrackListFragment : Fragment(R.layout.fragment_player), View.OnClickListener,
     View.OnTouchListener, MediaPlayer.OnCompletionListener, MediaPlayer.OnBufferingUpdateListener {
 
     companion object {
@@ -68,7 +68,7 @@ class PlayerFragmentOld : Fragment(R.layout.fragment_player), View.OnClickListen
 //        val view = binding.root
 //        setContentView(view)
         binding.stopBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_fragment_player_to_fragment_track_list)
+            findNavController().navigate(R.id.action_fragment_player_to_fragment_main_activity)
         }
 
         scopeIO.launch {
