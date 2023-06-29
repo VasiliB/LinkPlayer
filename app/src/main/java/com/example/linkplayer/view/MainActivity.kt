@@ -1,91 +1,74 @@
 package com.example.linkplayer.view
 
-//import kotlinx.android.synthetic.main.activity_main.*
-//import org.koin.android.viewmodel.ext.android.viewModel
 import android.os.Bundle
-import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
-//import androidx.navigation.Navigation.findNavController
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.linkplayer.R
-import com.example.linkplayer.databinding.ActivityMainBinding
-import com.example.linkplayer.utils.Status
-import com.example.linkplayer.view_model.TrackViewModel
-import com.example.musicapp.model.Track
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class MainActivity : AppCompatActivity() {
 
-    private val mainViewModel : TrackViewModel by viewModel()
-    private lateinit var adapter: MainAdapter
-    private lateinit var binding: ActivityMainBinding
+//    private val mainViewModel : TrackViewModel by viewModel()
+//    private lateinit var adapter: MainAdapter
+//    private lateinit var binding: MainActivityBinding
     private lateinit var navConroller: NavController
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
-        setupUI()
-        setupObserver()
+        setContentView(R.layout.main_activity)
+        navConroller = Navigation.findNavController(this, R.id.mainNavHostFragment)
 
-//        navConroller = Navigation.findNavController(this, R.id.mainNavHostFragment)
+//        binding = MainActyvityBinding.inflate(layoutInflater)
+//        val view = binding.root
+//        setContentView(view)
+//        setupUI()
+//        setupObserver()
 
-//        binding.root.setOnClickListener {
-//            findNavController().navigate(R.id.action_fragment_main_activity_to_fragment_player)
-//        }
+
     }
 
 
 
-    private fun setupUI() {
-        binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = MainAdapter(arrayListOf())
-        binding.recyclerView.addItemDecoration(
-            DividerItemDecoration(
-                binding.recyclerView.context,
-                (binding.recyclerView.layoutManager as LinearLayoutManager).orientation
-            )
-        )
-        binding.recyclerView.adapter = adapter
-    }
-
-    private fun setupObserver() {
-        mainViewModel.tracks.observe(this, Observer {
-            when (it.status) {
-                Status.SUCCESS -> {
-                    binding.progressBar.visibility = View.GONE
-                    it.data?.let { tracks -> renderList(tracks) }
-                    binding.recyclerView.visibility = View.VISIBLE
-                }
-                Status.LOADING -> {
-                    binding.progressBar.visibility = View.VISIBLE
-                    binding.recyclerView.visibility = View.GONE
-                }
-                Status.ERROR -> {
-                    //Handle Error
-                    binding.progressBar.visibility = View.GONE
-                    Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
-                }
-            }
-        })
-    }
-
-//    @SuppressLint("NotifyDataSetChanged")
-    private fun renderList(tracks: List<Track>) {
-        adapter.addData(tracks)
-        adapter.notifyDataSetChanged()
-    }
+//    private fun setupUI() {
+//        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+//        adapter = MainAdapter(arrayListOf())
+//        binding.recyclerView.addItemDecoration(
+//            DividerItemDecoration(
+//                binding.recyclerView.context,
+//                (binding.recyclerView.layoutManager as LinearLayoutManager).orientation
+//            )
+//        )
+//        binding.recyclerView.adapter = adapter
+//    }
+//
+//    private fun setupObserver() {
+//        mainViewModel.tracks.observe(this, Observer {
+//            when (it.status) {
+//                Status.SUCCESS -> {
+//                    binding.progressBar.visibility = View.GONE
+//                    it.data?.let { tracks -> renderList(tracks) }
+//                    binding.recyclerView.visibility = View.VISIBLE
+//                }
+//                Status.LOADING -> {
+//                    binding.progressBar.visibility = View.VISIBLE
+//                    binding.recyclerView.visibility = View.GONE
+//                }
+//                Status.ERROR -> {
+//                    //Handle Error
+//                    binding.progressBar.visibility = View.GONE
+//                    Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
+//                }
+//            }
+//        })
+//    }
+//
+////    @SuppressLint("NotifyDataSetChanged")
+//    private fun renderList(tracks: List<Track>) {
+//        adapter.addData(tracks)
+//        adapter.notifyDataSetChanged()
+//    }
 
 }
 
@@ -127,7 +110,9 @@ class MainActivity : AppCompatActivity() {
 //        const val CHANNEL_ID = "channelID"
 //    }
 //
-//    private lateinit var binding: ActivityMainBinding
+//    private lateinit var binding: Main
+//
+//    MainActyvityBinding
 //    private val scopeMain = CoroutineScope(Dispatchers.Main)
 //    private val scopeIO = CoroutineScope(Dispatchers.IO)
 //    private val retrofitHelper = RetrofitHelper()
@@ -149,7 +134,9 @@ class MainActivity : AppCompatActivity() {
 //    override fun onCreate(savedInstanceState: Bundle?) {
 //        super.onCreate(savedInstanceState)
 //        createNotificationChannel()
-//        binding = ActivityMainBinding.inflate(layoutInflater)
+//        binding = Main
+//
+//        MainActyvityBinding.inflate(layoutInflater)
 //        val view = binding.root
 //        setContentView(view)
 //

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragment_track_list"
-        android:name="com.example.linkplayer.view.MainActivity"
+        android:name="com.example.linkplayer.view.TrackListFragment"
         android:label="fragment_track_list"
         tools:layout="@layout/fragment_track_list">
 
@@ -24,7 +24,7 @@
     <fragment
         android:id="@+id/fragment_player"
         android:name="com.example.linkplayer.view.PlayerFragmentOld"
-        android:label="fragment_fart"
+        android:label="fragment_player"
         tools:layout="@layout/fragment_player">
 
         <action
