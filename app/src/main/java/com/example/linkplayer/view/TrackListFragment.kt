@@ -50,11 +50,17 @@ class TrackListFragment : Fragment(R.layout.fragment_track_list) {
             val view = binding.root
 
 //        setContentView(view)
-            setupUI()
-            setupObserver()
+//            setupUI()
+//            setupObserver()
         }
 
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        setupUI()
+        setupObserver()
     }
 
     private fun setupUI() {
@@ -84,7 +90,7 @@ class TrackListFragment : Fragment(R.layout.fragment_track_list) {
                 Status.ERROR -> {
                     //Handle Error
                     binding.progressBar.visibility = View.GONE
-//                    Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
+                    Toast. makeText(activity, it.message, Toast.LENGTH_LONG).show()
                 }
             }
         })

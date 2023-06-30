@@ -1,14 +1,12 @@
 package com.example.linkplayer.view
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.linkplayer.R
 import com.example.linkplayer.databinding.ItemLayoutBinding
 import com.example.musicapp.model.Track
-//import kotlinx.android.synthetic.main.item_layout.view.*
+
 
 class MainAdapter(
     private val tracks: ArrayList<Track>
