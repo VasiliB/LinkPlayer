@@ -31,9 +31,7 @@ class TrackListFragment : Fragment(R.layout.fragment_track_list) {
 //        savedInstanceState: Bundle?
 //    ): View? {
 //
-//        val view = binding.root
-//
-////        setContentView(view)
+//        binding = FragmentTrackListBinding.inflate(layoutInflater)
 //        setupUI()
 //        setupObserver()
 //
@@ -42,14 +40,15 @@ class TrackListFragment : Fragment(R.layout.fragment_track_list) {
 
     //Apply actions
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-        binding = FragmentTrackListBinding.inflate(layoutInflater)
+        super.onViewCreated(view, savedInstanceState)
+
         binding.root.setOnClickListener {
             findNavController().navigate(R.id.action_fragment_track_list_to_fragment_player)
 
-            val view = binding.root
+//            val view = binding.root
 
 //        setContentView(view)
+//            binding = FragmentTrackListBinding.inflate(layoutInflater)
 //            setupUI()
 //            setupObserver()
         }
@@ -61,6 +60,14 @@ class TrackListFragment : Fragment(R.layout.fragment_track_list) {
         super.onStart()
         setupUI()
         setupObserver()
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = FragmentTrackListBinding.inflate(layoutInflater)
+//
+//        setupUI()
+//        setupObserver()
     }
 
     private fun setupUI() {
