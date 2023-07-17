@@ -15,19 +15,19 @@ class MainActivity : AppCompatActivity() {
 //    private lateinit var binding: MainActivityBinding
 //    private lateinit var navConroller: NavController
 
-    private val navConroller by lazy {
-        val navHostFragment = supportFragmentManager
-            .findFragmentById(R.id.mainNavHostFragment) as NavHostFragment
-
-        navHostFragment.navController
-    }
+//    private val navConroller by lazy {
+//        val navHostFragment = supportFragmentManager
+//            .findFragmentById(R.id.mainNavHostFragment) as NavHostFragment
+//
+//        navHostFragment.navController
+//    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
-//        navConroller = Navigation.findNavController(this, R.id.mainNavHostFragment)
-        navConroller
+//        val navConroller = Navigation.findNavController(this, R.id.mainNavHostFragment)
+//        navConroller
 //        val navHostFragment =
 //            supportFragmentManager.findFragmentById(R.id.mainNavHostFragment)
 //                    as NavHostFragment

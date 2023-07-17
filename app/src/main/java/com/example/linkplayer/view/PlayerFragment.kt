@@ -9,7 +9,7 @@
 //import com.example.linkplayer.databinding.FragmentPlayerBinding
 //
 //import com.example.musicapp.model.Track
-//import com.example.linkplayer.view_model.TrackViewModel
+//import com.example.linkplayer.view.track_list.TrackViewModel
 //import kotlinx.coroutines.CoroutineScope
 //import kotlinx.coroutines.Dispatchers
 //import org.koin.androidx.viewmodel.ext.android.viewModel
