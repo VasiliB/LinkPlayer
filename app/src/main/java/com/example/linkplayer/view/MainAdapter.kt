@@ -16,11 +16,11 @@ class MainAdapter(
 
     class DataViewHolder(private val binding: ItemLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(track: Track) {
-            binding.textViewUserName.text = track.artist
-            binding.textViewUserEmail.text = track.title
-            Glide.with(binding.imageViewAvatar.context)
+            binding.textViewTrackPerformer.text = track.artist
+            binding.textViewTrackName.text = track.title
+            Glide.with(binding.imageViewCover.context)
                 .load(track.bitmapUri)
-                .into(binding.imageViewAvatar)
+                .into(binding.imageViewCover)
         }
     }
 

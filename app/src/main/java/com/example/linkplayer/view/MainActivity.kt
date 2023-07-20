@@ -10,40 +10,11 @@ import com.example.linkplayer.R
 
 class MainActivity : AppCompatActivity() {
 
-//    private val mainViewModel : TrackViewModel by viewModel()
-//    private lateinit var adapter: MainAdapter
-//    private lateinit var binding: MainActivityBinding
-//    private lateinit var navConroller: NavController
-
-//    private val navConroller by lazy {
-//        val navHostFragment = supportFragmentManager
-//            .findFragmentById(R.id.mainNavHostFragment) as NavHostFragment
-//
-//        navHostFragment.navController
-//    }
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
-//        val navConroller = Navigation.findNavController(this, R.id.mainNavHostFragment)
-//        navConroller
-//        val navHostFragment =
-//            supportFragmentManager.findFragmentById(R.id.mainNavHostFragment)
-//                    as NavHostFragment
-//        // Passing each menu ID as a set of Ids because each
-//        // menu should be considered as top level destinations.
-//        navConroller = navHostFragment.navController
-
-//        binding = MainActyvityBinding.inflate(layoutInflater)
-//        val view = binding.root
-//        setContentView(view)
-//        setupUI()
-//        setupObserver()
-
-
     }
-
+}
 
 
 //    private fun setupUI() {
@@ -84,8 +55,6 @@ class MainActivity : AppCompatActivity() {
 //        adapter.addData(tracks)
 //        adapter.notifyDataSetChanged()
 //    }
-
-}
 
 
 //trackViewModel.data.observe(this, Observer {

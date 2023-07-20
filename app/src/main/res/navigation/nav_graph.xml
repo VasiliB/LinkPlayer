@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/fragment_player"
-        android:name="com.example.linkplayer.view.PlayerFragmentOld"
+        android:name="com.example.linkplayer.view.PlayerFragment"
         android:label="fragment_player"
         tools:layout="@layout/fragment_player">
 

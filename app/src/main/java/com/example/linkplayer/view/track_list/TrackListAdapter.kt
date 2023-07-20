@@ -30,11 +30,11 @@ class TrackListAdapter :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(viewModel: TrackItemViewModel) {
             with(binding) {
-                textViewUserName.text = viewModel.track.artist
-                textViewUserEmail.text = viewModel.track.title
-                Glide.with(imageViewAvatar.context)
+                textViewTrackPerformer.text = viewModel.track.artist
+                textViewTrackName.text = viewModel.track.title
+                Glide.with(imageViewCover.context)
                     .load(viewModel.track.bitmapUri)
-                    .into(imageViewAvatar)
+                    .into(imageViewCover)
                 root.setOnClickListener {
                     viewModel.onTrackClicked(viewModel.track)
                 }
