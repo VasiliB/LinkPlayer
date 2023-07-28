@@ -1,8 +1,10 @@
-package com.example.musicapp.model
+package com.example.linkplayer.model
 
+import android.os.Parcelable
 import com.squareup.moshi.Json
+import kotlinx.parcelize.Parcelize
 
-
+@Parcelize
 data class Track(
     @Json(name = "title")
     val title: String,
@@ -12,7 +14,7 @@ data class Track(
     val bitmapUri: String?,
     @Json(name = "trackUri")
     val trackUri: String?
-)
+): Parcelable
 
 //@Serializable
 //data class Track(

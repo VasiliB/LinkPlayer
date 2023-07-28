@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.DiffUtil
 import coil.load
 import com.example.linkplayer.R
 import com.example.linkplayer.databinding.FragmentPlayerBinding
-import com.example.musicapp.model.Track
+import com.example.linkplayer.model.Track
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -24,6 +24,8 @@ import kotlinx.coroutines.withContext
 import retrofit2.Response
 import java.io.IOException
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
+import com.example.linkplayer.view.track_list.TrackListFragment
 
 
 class PlayerFragment : Fragment(R.layout.fragment_player), View.OnClickListener,
@@ -49,8 +51,20 @@ class PlayerFragment : Fragment(R.layout.fragment_player), View.OnClickListener,
     private var trackLengthInMs: Int? = null
     private lateinit var bitmapUri: String
 
+    private lateinit var track: Track
+
     //    private var cover = binding.cover
     private lateinit var trackUrl: String
+
+//    private val args by navArgs<PlayerFragmentArgs>()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+//        arguments?.let {
+//            trackNumber = it.getInt("trackNumber")
+//        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -64,6 +78,7 @@ class PlayerFragment : Fragment(R.layout.fragment_player), View.OnClickListener,
     //Apply actions
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+//        args.character.whatever
         binding = FragmentPlayerBinding.inflate(layoutInflater)
 //        val view = binding.root
 //        setContentView(view)
@@ -208,7 +223,8 @@ class PlayerFragment : Fragment(R.layout.fragment_player), View.OnClickListener,
         intent.apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
-        val pendingIntent = PendingIntent.getActivity(activity, 0, intent, 0)
+        val pendingIntent = PendingIntent.getActivity(activity, 0, intent,
+            PendingIntent.FLAG_MUTABLE)
 
 //        val builder = NotificationCompat.Builder(this, PlayerFragment.CHANNEL_ID)
 //            .setSmallIcon(R.drawable.r5d_cassette_jolly_roger)

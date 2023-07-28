@@ -10,10 +10,9 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.linkplayer.databinding.FragmentTrackListBinding
 import com.example.linkplayer.utils.observe
-import com.example.musicapp.model.Track
+import com.example.linkplayer.model.Track
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import androidx.navigation.fragment.findNavController
-import com.example.linkplayer.R
 
 
 class TrackListFragment : Fragment() {
@@ -79,6 +78,8 @@ class TrackListFragment : Fragment() {
     }
 
     private fun navigateToTrack(track: Track) {
-        findNavController().navigate(R.id.action_fragment_track_list_to_fragment_player)
+        val action = TrackListFragmentDirections.actionFragmentTrackListToFragmentPlayer(track)
+        findNavController().navigate(action)
+//         findNavController().navigate(R.id.action_fragment_track_list_to_fragment_player)
     }
 }

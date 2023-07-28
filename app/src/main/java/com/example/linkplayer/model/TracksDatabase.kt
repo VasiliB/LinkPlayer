@@ -5,7 +5,7 @@
 //import androidx.room.RoomDatabase
 //import androidx.room.TypeConverters
 //import com.example.linkplayer.model.dao.TrackDao
-//import com.example.musicapp.model.Track
+//import com.example.linkplayer.model.Track
 //
 //@Database(
 //    entities = [Track::class],

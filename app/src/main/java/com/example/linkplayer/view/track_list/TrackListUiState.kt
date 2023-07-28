@@ -1,6 +1,6 @@
 package com.example.linkplayer.view.track_list
 
-import com.example.musicapp.model.Track
+import com.example.linkplayer.model.Track
 
 data class TrackListUiState(
     val screenState: ScreenState = ScreenState.IDLE,

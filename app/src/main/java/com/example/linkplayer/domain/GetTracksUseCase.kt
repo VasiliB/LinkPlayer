@@ -2,7 +2,7 @@ package com.example.linkplayer.domain
 
 import com.example.linkplayer.model.repository.TrackRepository
 import com.example.linkplayer.utils.NetworkHelper
-import com.example.musicapp.model.Track
+import com.example.linkplayer.model.Track
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
